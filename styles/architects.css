@@ -17,7 +17,8 @@
 /* shared style */
 .navbar,
 .nav-links,
-#teams {
+#teams,
+.fact-card{
     display: flex;
 }
 
@@ -40,6 +41,7 @@
 .description {
     font-size: 0.67rem;
     line-height: 19px;
+    color: #727272;
 }
 
 .btn-primary {
@@ -52,12 +54,15 @@
     border-radius: 8px;
     margin: 25px 0 50px 0;
 }
+
 .section-title {
     font-size: 1.875rem;
     font-weight: bold;
 }
+
 main>section {
-    margin-top: 100px;
+    width: 75%;
+    margin: 100px auto 0;
 }
 
 /* header style */
@@ -140,6 +145,41 @@ main>section {
 #feature {
     color: #FF900E;
 }
+/* facts section styles  */
+#facts .section-title{
+    margin-bottom: 18px;
+}
+#facts .description{
+    max-width: 405px;
+    margin-bottom: 75px;
+}
+.fact-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 0 38px 0;
+}
+.fact-card{
+    width: 180px;
+    height: 180px;
+    border:1px solid #FF900E;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fact-number{
+    font-size: 1.875rem;
+    font-weight: 600;
+    color:#424242;
+    margin:8px 0 4px;
+
+}
+.fact-name{
+    font-size: 0.84rem;
+    font-weight: 600;
+    color:#727272;
+    margin-top: 4px;
+}
 
 
 /* responsive media query */
@@ -154,21 +194,31 @@ main>section {
         gap: 5px;
         align-items: center;
     }
-
+    main>section{
+        margin-top: 50px;
+    }
     #teams {
         margin-top: 50px;
         flex-direction: column-reverse;
     }
 
-    .team-img-container {
-        grid-template-columns: repeat(1, 1fr);
-        /* gap:10px; */
+    .team-img-container,.fact-container {
+        grid-template-columns:1fr;
+
     }
 
     .our-features {
         margin-left: 5px;
         text-align: center;
     }
+    .fact-contents{
+        text-align: center;
+    }
+    .fact-container{
+        gap:24px;
+        justify-items: center;
+    }
+
 }
 
 /* medium device */
@@ -177,8 +227,15 @@ main>section {
         margin-top: 50px;
         flex-direction: column-reverse;
     }
+
     .our-features {
         margin: 0 auto;
         text-align: center;
     }
+    .fact-container {
+        grid-template-columns:repeat(2,1fr);
+        gap: 40px;
+        justify-items: center;
+    }
+    
 }
